@@ -1,0 +1,22 @@
+<!--<div *ngFor="let car of cars">-->
+<!--  {{car.name}}-->
+<!--</div>-->
+<div style="margin: 100px">
+  <h2>Car List</h2>
+
+<table mat-table [dataSource]="cars" matSort class="mat-elevation-z8">
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header class="myHeader"> Car Name </th>
+    <td mat-cell *matCellDef="let car" class="myCell"> {{car.name}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="year">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header class="myHeader"> Car Year </th>
+    <td mat-cell *matCellDef="let car" class="myCell"> {{car.year}} </td>
+  </ng-container>
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+</div>
